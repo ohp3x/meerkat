@@ -9,6 +9,7 @@ OS=$(lsb_release -si)
 VER=$(lsb_release -sr)
 
 function init() {
+    echo "running init..."
     cd ~/
     mkdir -p ~/Workspaces
     mkdir -p ~/Workspaces/git-clones
@@ -30,10 +31,12 @@ function init() {
 }
 
 function updateOS() {
+    echo "running updateOS..."
     sudo apt-get update && sudo apt-get upgrade -y
 }
 
 function install() {
+    echo "running install..."
     sudo apt-get install software-properties-common rustc cargo
     sudo add-apt-repository ppa:oisf/suricata-stable
     sudo apt-get update
@@ -46,11 +49,11 @@ function run() {
     if [$VER != "22.04"]; then
         echo "Not Ubuntu Server 22.04 LTS exiting..."
     else
-        init()
-        #install()
-        updateOS()
+        init
+        install
+        updateOS
         exit
     fi
 } 
 
-run()
+run
