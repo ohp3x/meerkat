@@ -52,6 +52,7 @@ function run() {
         init
         install
         updateOS
+        echo " Installation complete."
         exit
     fi
 } 
