@@ -47,11 +47,11 @@ function run() {
     if $VER != "22.04"; then
         echo "Not Ubuntu Server 22.04 LTS exiting..."
     else
-        init()
-        install()
-        updateOS()
+        init();
+        install();
+        updateOS();
         exit
     fi
 } 
 
-run()
+run();
