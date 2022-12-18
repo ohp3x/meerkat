@@ -32,15 +32,15 @@ function init() {
 
 function updateOS() {
     echo "running updateOS..."
-    sudo apt-get update && sudo apt-get upgrade -y
+    sudo apt-get update && sudo apt-get full-upgrade -y
 }
 
 function install() {
     echo "running install..."
-    sudo apt-get install software-properties-common rustc cargo
+    sudo apt-get install -y software-properties-common rustc cargo
     sudo add-apt-repository ppa:oisf/suricata-stable
     sudo apt-get update
-    sudo apt-get install suricata jq
+    sudo apt-get install -y suricata jq
     sudo cargo install --force --debug --version "0.14.1" cbindgen
         # TODO: add /root/.caro/bin to path
 }
