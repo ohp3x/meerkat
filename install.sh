@@ -33,14 +33,14 @@ function updateOS() {
     sudo apt-get update && sudo apt-get upgrade -y
 }
 
-function insall() {
+function install() {
     sudo apt-get install software-properties-common rustc cargo
     sudo add-apt-repository ppa:oisf/suricata-stable
     sudo apt-get update
     sudo apt-get install suricata jq
     sudo cargo install --force --debug --version 0.14.1 cbindgen
 
-# TODO: add /root/.caro/bin to path    
+    # TODO: add /root/.caro/bin to path    
 }
 
 function run() {
